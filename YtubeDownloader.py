@@ -37,7 +37,8 @@ def down(pobject,choice):
       Dstream=pobject.allstreams[int(choice)-1]
    filename=str(pobject.title)+"."+str(Dstream).split('@')[0].split(':')[1]
    print("Downloading "+filename)
-   urllib.urlretrieve(str(Durl), filename,reporthook)
+   Dstream.download(quiet=False)
+   #urllib.urlretrieve(str(Durl), filename,reporthook)
    print("\nFile downloaded at "+str(os.getcwd())+"/"+filename)
 
 def pldetails(pl):
